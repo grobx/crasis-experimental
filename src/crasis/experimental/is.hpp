@@ -31,7 +31,9 @@ template <typename S> struct check_sparse {
   S s;
 
   const bool is(const char c) {
-    return std::binary_search(s.a, s.a + s.l, c);
+    //return std::binary_search(s.a, s.a + s.l, c);
+
+    return std::find(s.a, s.a + s.l, c) != s.a + s.l;
   }
 };
 
