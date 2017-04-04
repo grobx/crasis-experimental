@@ -31,17 +31,24 @@ template <typename S> struct check_sparse {
   S s;
 
   const bool is(const char c) {
-    //return std::binary_search(s.a, s.a + s.l, c);
-
     return std::find(s.a, s.a + s.l, c) != s.a + s.l;
+  }
+};
+
+// S must be a seq<alphabet>
+template <typename S> struct check_sparse_binary {
+  S s;
+
+  const bool is(const char c) {
+    return std::binary_search(s.a, s.a + s.l, c);
   }
 };
 
 // A must be sorted
 template <const char A []> struct seq {
-  const char * a = A;
-
   const std::size_t l = length(A);
+
+  const char * a = A;
 };
 
 // C must be either check_range or check_sparse

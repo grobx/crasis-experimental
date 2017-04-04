@@ -9,8 +9,6 @@ HunterGate(
 
 project(crasis-experimental VERSION 0.99.1)
 
-hunter_add_package(doctest)
-
 add_subdirectory(src)
 
 include(CTest)
