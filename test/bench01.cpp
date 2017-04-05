@@ -40,6 +40,17 @@ static void BM_StdFind(benchmark::State &state) {
 }
 BENCHMARK(BM_StdFind);
 
+static void BM_StdBinarySearch(benchmark::State &state) {
+  bool ret;
+
+  while (state.KeepRunning()) {
+    auto fake_alnum_length = std::strlen(fake_alnum);
+
+    ret = std::binary_search(fake_alnum, fake_alnum + fake_alnum_length, '\xCd');
+  }
+}
+BENCHMARK(BM_StdBinarySearch);
+
 static void BM_ForEach(benchmark::State &state) {
   bool ret;
 
