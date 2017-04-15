@@ -11,6 +11,8 @@ project(crasis-experimental VERSION 0.99.1)
 
 add_subdirectory(src)
 
+add_subdirectory(benchmark)
+
 include(CTest)
 enable_testing()
 add_subdirectory(test)
